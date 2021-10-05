@@ -168,4 +168,50 @@ default 색은 검정색 이어서 검정 사각형이 그려진 것이고 이 �
  context.arc(300, 200, 50, 0, 라디안(360), false);
  context.stroke();
  ```
-`context.stroke();` 선으로 그린다.
+`context.stroke();` 선으로 그린다.  
+
+
+## requsetAnimationFrame
+```js
+    const canvas = document.querySelector('.canvas');
+    const context = canvas.getContext('2d');
+
+    function draw()  {
+        context.arc(10, 150, 5, 0, Math.PI*2, false);
+        context.fill();
+        // requsetAnimationFrame(draw);
+    }
+
+    draw(); 
+```
+
+![canvas03](./image/canvas03.png)
+
+requsetAnimationFrame은 그리기 최적화 된 상태에서 그리기 시작한다.   
+
+requsetAnimationFrame 자체적으로 반복하면서 그리는 것은 아니고 인위적으로 반복시켜 애니메이션 효과를 나타낸다.
+
+
+requestAnimationFrame 속도 조절을 아래와 같은 방법으로 할 수 있다.
+
+```js
+    const canvas = document.querySelector('.canvas');
+    const context = canvas.getContext('2d');
+    let xPos = 10;
+    let count = 0;
+
+    function draw()  {
+        if (count % 30 === 0) {
+            context.clearRect(0,0,canvas.width, canvas.height);
+            context.beginPath();
+            context.arc(xPos, 150, 5, 0, Math.PI*2, false);
+            context.fill();
+            xPos += 1;
+        }
+        
+        count++;
+        requsetAnimationFrame(draw);
+    }
+
+    draw(); 
+```
