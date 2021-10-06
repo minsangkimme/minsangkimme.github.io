@@ -215,3 +215,38 @@ requestAnimationFrame 속도 조절을 아래와 같은 방법으로 할 수 있
 
     draw(); 
 ```
+
+애니메이션 멈추는 방법
+```js
+    const canvas = document.querySelector('.canvas');
+    const context = canvas.getContext('2d');
+    let xPos = 10;
+    let count = 0;
+    let timerId;
+
+    function draw()  {
+        if (count % 30 === 0) {
+            context.clearRect(0,0,canvas.width, canvas.height);
+            context.beginPath();
+            context.arc(xPos, 150, 5, 0, Math.PI*2, false);
+            context.fill();
+            xPos += 1;
+        }
+        
+        // 방법 1..
+        if (xPos >= canvas.width - 10) {
+            // -10 이유는 원의 반지름만큼 빼면 끝에 닿았을 때 멈추기 위해서
+            return;
+        }
+
+        count++;
+        timerId = requsetAnimationFrame(draw);
+
+        // 방법 2.
+        if (xPos >= canvas.width - 10) {
+            clearAnimationFrame(timerId);
+        }
+    }
+
+    draw(); 
+```
