@@ -1,6 +1,7 @@
 // custom typefaces
 require('typeface-noto-sans-kr')
 require('typeface-catamaran')
+require('@kfonts/bm-hanna-11yrs')
 
 // polyfill
 require('intersection-observer')
