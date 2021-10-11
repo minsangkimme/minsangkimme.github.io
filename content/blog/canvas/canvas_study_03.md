@@ -118,7 +118,7 @@ const messages = [
 ```
 ```ctx.getImageData```에 각 픽셀에  대한 색상정보를 가지고 있습니다.
 
-getImageData 로 받아온 imageData 변수를 console에 찍어보면 data, width, height 등 있습니다. 여기서 data 가 중요한데 data 안에 픽셀 정보가 들어 있습니다.
+> **getImageData** 로 받아온 imageData 변수를 console에 찍어보면 data, width, height 등 있습니다. 여기서 data 가 중요한데  **data 안에 픽셀 정보**가 들어 있습니다.
 
 ![canvas10](./image/canvas10.png)
 
