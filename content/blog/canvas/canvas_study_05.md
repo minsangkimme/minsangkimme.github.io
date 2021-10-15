@@ -66,8 +66,8 @@ x 좌표는 200보다 크면서 200 x좌표 + 100너비 이내를 클릭했을 �
 let tempX, tempY;
 
  for (let i = 0; i < 10; i ++) {
-     tempX = Math.random * 600 * 0.8;
-     tempY = Math.random * 400 * 0.8;
+     tempX = Math.random() * 600 * 0.8;
+     tempY = Math.random() * 400 * 0.8;
      boxes.push(new Box(i, tempX, tempY));
  }
 ```
@@ -105,8 +105,8 @@ let tempX, tempY;
 let tempX, tempY;
 
  for (let i = 0; i < 10; i ++) {
-     tempX = Math.random * 600 * 0.8;
-     tempY = Math.random * 400 * 0.8;
+     tempX = Math.random() * 600 * 0.8;
+     tempY = Math.random() * 400 * 0.8;
      boxes.push(new Box(i, tempX, tempY));
  }
 
@@ -150,8 +150,8 @@ let tempX, tempY;
 let tempX, tempY;
 
  for (let i = 0; i < 10; i ++) {
-     tempX = Math.random * 600 * 0.8;
-     tempY = Math.random * 400 * 0.8;
+     tempX = Math.random() * 600 * 0.8;
+     tempY = Math.random() * 400 * 0.8;
      boxes.push(new Box(i, tempX, tempY));
  }
 
@@ -227,7 +227,7 @@ let tempX, tempY;
 
 ## 각 인스턴스 별 속도를 다르게 이동하기
 
-![canvas17](./image/canvas17.gif) 
+<img src="./image/canvas_animation.gif" width="100%"/>
 
 ```js
  const canvas = document.querySelector('.canvas');
@@ -273,9 +273,9 @@ let tempX, tempY;
 let tempX, tempY, tempSpeed;
 
  for (let i = 0; i < 10; i ++) {
-     tempX = Math.random * 600 * 0.8;
-     tempY = Math.random * 400 * 0.8;
-     tempSpeed = Math.random * 4 + 1;
+     tempX = Math.random() * 600 * 0.8;
+     tempY = Math.random() * 400 * 0.8;
+     tempSpeed = Math.random() * 4 + 1;
      boxes.push(new Box(i, tempX, tempY, tempSpeed));
  }
 
@@ -287,12 +287,21 @@ let tempX, tempY, tempSpeed;
 
  ```Box Class``` 의 ```constructor```에  매개변수와 내부 상태값 speed 를 추가하였습니다.
 
- ```tempSpeed``` 변수를 추가 하였고 속도는 1~5 사이의 숫자를 랜덤하게 뽑기 위해 ```Math.random*4 + 1``` 수식으로 하였습니다.   
+ ```tempSpeed``` 변수를 추가 하였고 속도는 1~5 사이의 숫자를 랜덤하게 뽑기 위해 ```Math.random()*4 + 1``` 수식으로 하였습니다.   
 
  랜덤값의 최소값은 0 기 때문에 1 이상이어야 해서 ```+1``` 을 하였고 5 이내의 범위이기 때문에 ```*4```를 하였습니다.
 
 
 
 <br />
+<br />
+<br />
+
+## 👵응용하기
+<img src="./image/canvas_box.gif" width="100%"/>
+
+상자 생성 갯수를 옵션으로 추가하고 각 인스턴스 별 크기와 색을 다르게 수정해 보았습니다.
+
+__[확인해보기](https://minsangkimme.github.io/learn-interactive-dev/interaction/index.html)__
 
 감사합니다 ^^!
